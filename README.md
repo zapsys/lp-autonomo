@@ -21,7 +21,7 @@ Um construtor visual desenvolvido com Vue 3, Vite e Tailwind CSS para confeiteir
 
 O **LP Autônomo** é um construtor de landing pages que permite criar sites profissionais sem necessidade de programação.
 
-A aplicação oferece um assistente passo a passo para coleta de informações do negócio, exibindo uma pré-visualização em tempo real enquanto o usuário personaliza:
+A aplicação oferece um assistente passo-a-passo para coleta de informações do negócio, exibindo uma pré-visualização em tempo real enquanto o usuário personaliza:
 
 - Identidade visual
 - Logotipo
@@ -31,8 +31,6 @@ A aplicação oferece um assistente passo a passo para coleta de informações d
 - Diferenciais
 - Informações de contato
 - Localização
-- SEO
-- Open Graph
 
 Ao final do processo, o sistema gera automaticamente uma versão otimizada do site pronta para hospedagem.
 
@@ -163,7 +161,7 @@ lp-autonomo/
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/lp-autonomo.git
+git clone https://github.com/zapsys/lp-autonomo.git
 ```
 
 Entre na pasta:
