@@ -12,7 +12,7 @@ Um construtor visual desenvolvido com Vue 3, Vite e Tailwind CSS para confeiteir
 ![AOS](https://img.shields.io/badge/AOS-Animate_On_Scroll-8B5CF6?style=for-the-badge)
 ![Adm-zip](https://img.shields.io/badge/Adm--Zip-2563EB?style=for-the-badge)
 ![MIT LICENSE](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
-![Versão 1.0.0](https://img.shields.io/badge/Version-1.0.0-2563EB?style=for-the-badge)
+![Versão 1.1.0](https://img.shields.io/badge/Version-1.1.0-2563EB?style=for-the-badge)
 ![Em Desenvolvimento](https://img.shields.io/badge/Status-Em_Desenvolvimento-F59E0B?style=for-the-badge)
 
 ---
@@ -122,6 +122,7 @@ Ao final do processo, o sistema gera automaticamente uma versão otimizada do si
 
 - adm-zip
 - cors
+- AOS
 
 ---
 
@@ -179,6 +180,28 @@ npm install
 
 ---
 
+# ⚙️ Configuração de Ambiente
+
+Crie um dos arquivos abaixo na raiz do projeto:
+
+```text
+.env.local
+```
+
+ou
+
+```text
+.env.development
+```
+
+Conteúdo:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+---
+
 # ▶️ Executando o Projeto
 
 ## Front-end
@@ -217,49 +240,135 @@ Ao clicar em:
 Baixar Site (.zip)
 ```
 
-o sistema executa:
+o sistema executa o seguinte fluxo:
 
 ```text
 Formulário
-    ↓
+        ↓
 businessStore
-    ↓
-business.json
-    ↓
-npm run build
-    ↓
-dist/
-    ↓
-ZIP
-    ↓
-download
+        ↓
+Tratamento dos dados
+        ↓
+Extração das imagens Base64
+        ↓
+Geração do business.json
+        ↓
+Cópia da build existente (dist/)
+        ↓
+Montagem da estrutura estática
+        ↓
+Compactação do conteúdo
+        ↓
+Download do ZIP
 ```
+
+## Como funciona
+
+O processo de exportação utiliza a build já existente da aplicação e não executa uma nova compilação.
+
+Durante a exportação:
+
+- ✅ Os dados preenchidos no formulário são extraídos do `businessStore`
+- ✅ As imagens são convertidas para arquivos físicos
+- ✅ É criado um arquivo `business.json
 
 ---
 
 # 📄 Estrutura do ZIP Gerado
 
 ```text
-caf-sabor-confeitaria.zip
+minha-landing.zip
 │
 ├── index.html
+├── business.json
+│
 ├── assets/
-│   ├── index.js
 │   ├── index.css
+│   ├── index.js
 │   └── ...
 │
-└── business.json
+└── images/
+    ├── logo.png
+    ├── product-1.jpg
+    ├── product-2.jpg
+    ├── feature-1.jpg
+    ├── gallery-1.jpg
+    └── gallery-2.jpg
+```
+
+---
+
+# 🌐 Compatibilidade de Hospedagem
+
+A landing exportada é totalmente estática.
+
+Não requer:
+
+```text
+Node.js
+Express
+npm
+Banco de Dados
+Docker
 ```
 
 Compatível com:
 
-- Hostinger
-- Locaweb
-- KingHost
-- GitHub Pages
-- Netlify
-- Vercel
-- Cloudflare Pages
+- ✅ Hostinger
+- ✅ Locaweb
+- ✅ KingHost
+- ✅ cPanel
+- ✅ GitHub Pages
+- ✅ Netlify
+- ✅ Vercel
+- ✅ Cloudflare Pages
+- ✅ Amazon S3
+- ✅ Azure Static Web Apps
+
+---
+# 🔄 Modo Exportado
+
+Durante a exportação é adicionada automaticamente a propriedade:
+
+```json
+{
+  "exported": true
+}
+```
+
+Quando essa propriedade está presente:
+
+```text
+LandingPageView
+↓
+Carregada automaticamente
+```
+
+O usuário final visualiza apenas a landing page.
+
+O ambiente de edição permanece oculto.
+
+---
+
+# 💾 Persistência de Dados
+
+Durante a edição:
+
+```text
+localStorage
+        ↓
+businessStore
+```
+
+Após a exportação:
+
+```text
+business.json
+        ↓
+businessStore
+```
+
+Isso permite que a landing exportada funcione independentemente do editor.
 
 ---
 
@@ -282,6 +391,29 @@ Compatível com:
 
 ---
 
+# 🧩 Recursos Recentes
+
+## Versão 1.1
+
+- ✅ Exportação estática
+- ✅ Geração automática de `business.json`
+- ✅ Modo exportado (`exported`)
+- ✅ Landing exportada sem editor
+- ✅ Upload múltiplo de imagens
+- ✅ Galeria responsiva
+- ✅ Diferenciais com imagem
+- ✅ SEO dinâmico
+- ✅ Open Graph automático
+- ✅ Twitter Cards
+- ✅ Favicon dinâmico
+- ✅ Compatibilidade com GitHub Pages
+- ✅ Compatibilidade com Render
+- ✅ Compatibilidade com hospedagens compartilhadas
+- ✅ Armazenamento local automático
+- ✅ Centralização automática do mapa em dispositivos móveis
+
+---
+
 # 🔮 Roadmap
 
 ## Futuras Implementações
@@ -290,7 +422,6 @@ Compatível com:
 - [ ] Banco de dados
 - [ ] Multiusuário
 - [ ] Deploy automático
-- [ ] Exportação para GitHub Pages
 - [ ] Integração com domínio próprio
 - [ ] Editor drag-and-drop
 - [ ] Biblioteca de componentes
