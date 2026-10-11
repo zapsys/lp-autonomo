@@ -197,6 +197,10 @@ ou
 Conteúdo:
 
 ```env
+BASE_URL=http://localhost:5173
+```
+
+```env
 VITE_API_URL=http://localhost:3000
 ```
 
