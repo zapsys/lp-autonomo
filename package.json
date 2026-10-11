@@ -1,0 +1,28 @@
+{
+  "name": "lp-autonomo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "server": "node server/app.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "adm-zip": "^0.6.1",
+    "aos": "^2.3.4",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.2",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}

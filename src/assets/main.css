@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+--primary: #d9779b;
+--primary-light: #f9a8d4;
+--primary-dark: #be185d;
+}
+ 
+html {
+scroll-behavior: smooth;
+}
