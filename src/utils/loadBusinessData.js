@@ -1,6 +1,10 @@
 export async function loadBusinessData() {
     try {
-        const response = await fetch("./business.json");
+        const response = await fetch(
+            fetch(
+                `${import.meta.env.BASE_URL}business.json`
+            )
+        );
 
         if (!response.ok) {
             return null;
