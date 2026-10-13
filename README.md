@@ -272,7 +272,7 @@ Durante a exportação:
 
 - ✅ Os dados preenchidos no formulário são extraídos do `businessStore`
 - ✅ As imagens são convertidas para arquivos físicos
-- ✅ É criado um arquivo `business.json
+- ✅ É criado um arquivo `business.json`
 
 ---
 
