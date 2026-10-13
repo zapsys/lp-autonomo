@@ -8,7 +8,7 @@
       <div class="my-6">
         <ProgressBar :percent="(business.step * 50) / 3" />
       </div>
-      <div class="grid gap-6 md:grid-cols-[380px_1fr] lg:grid-cols-[450px_1fr]">
+      <div class="grid gap-6 sm:grid-cols-[320px_1fr] md:grid-cols-[380px_1fr] lg:grid-cols-[450px_1fr]">
         <!-- Formulário -->
         <div class="rounded-2xl bg-white p-6 shadow-lg">
           <template v-if="business.step === 1">
@@ -34,9 +34,19 @@
             <BaseTextarea v-model="business.contactDescription" placeholder="Texto que será exibido na seção de contato"
               :rows="4" :error="errors.contactDescription" />
             <BaseTextarea v-model="business.mapUrl" placeholder="Cole a URL ou iframe do Google Maps" :rows="2" />
+            <div class="text-xs text-gray-500">
+             <p>
+                Cole o link do mapa incorporado para exibir a localização na landing page.
+              </p>
+              <a href="https://support.google.com/maps/answer/144361" target="_blank" rel="noopener noreferrer"
+                class="mt-1 inline-block text-violet-600">
+                Como obter o link do mapa?
+              </a>
+            </div>  
             <div label="Mapa de localização" v-if="business.mapUrl"
               class="mt-2 border border-slate-200 bg-slate-50 p-4 text-center text-slate-500 overflow-hidden rounded-xl shadow-md"
-              v-html="business.mapUrl"></div>
+              v-html="business.mapUrl">
+            </div>
           </template>
           <template v-if="business.step === 3">
             <h2 class="mb-4 text-2xl font-semibold">Sobre o Negócio</h2>
